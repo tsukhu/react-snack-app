@@ -21,7 +21,7 @@
     height: 80%;
 }
 
-@media (max-widht: 499px) {
+@media (max-width: 499px) {
     .DesktopOnly {
         display: none;
     }
