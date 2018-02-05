@@ -22,6 +22,12 @@ export const purchaseBurgerStart = () => {
     };
 };
 
+export const burgerBuildInit = () => {
+    return {
+        type: actionTypes.BURGER_BUILD_INIT
+    };
+};
+
 export const purchaseBurger = ( orderData, token ) => {
     return dispatch => {
         dispatch( purchaseBurgerStart() );
@@ -29,9 +35,11 @@ export const purchaseBurger = ( orderData, token ) => {
             .then( response => {
                 console.log( response.data );
                 dispatch( purchaseBurgerSuccess( response.data.name, orderData ) );
+                dispatch(burgerBuildInit());
             } )
             .catch( error => {
                 dispatch( purchaseBurgerFail( error ) );
+                dispatch(burgerBuildInit());
             } );
     };
 };

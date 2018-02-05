@@ -28,6 +28,14 @@ export const fetchIngredientsFailed = () => {
     };
 };
 
+export const burgerBuildInit = () => {
+    return {
+        type: actionTypes.BURGER_BUILD_INIT
+    };
+};
+
+
+
 export const initIngredients = () => {
     return dispatch => {
         axios.get( 'https://react-demo-255ee.firebaseio.com/ingredients.json' )
