@@ -39,7 +39,7 @@ class Checkout extends Component {
         </div>
       );
     }
-    console.log(summary);
+  //  console.log(summary);
     return summary;
   }
 }
