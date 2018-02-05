@@ -19,7 +19,7 @@ class App extends Component {
       <div>
         <Route path="/auth" exact component={Auth} />
         <Route path="/" exact component={BurgerBuilder} />
-        <Redirect to="/"/>
+        <Redirect to="/" />
       </div>
     );
 
@@ -30,7 +30,7 @@ class App extends Component {
           <Route path="/orders" exact component={Orders} />
           <Route path="/logout" component={Logout} />
           <Route path="/" exact component={BurgerBuilder} />
-          <Redirect to="/"/>
+          <Redirect to="/" />
         </Switch>
       );
     }
