@@ -7,7 +7,9 @@ import {
   authCheckStateSaga
 } from './auth';
 
-import { initIngredientsSaga } from './burgerBuilder';
+import { initBurgerIngredientsSaga } from './burgerBuilder';
+
+import { initPizzaIngredientsSaga } from './pizzaBuilder';
 
 import { purchaseBurgerSaga, fetchOrdersSaga } from './order';
 
@@ -21,7 +23,11 @@ export function* watchAuth() {
 }
 
 export function* watchBurgerBuilder() {
-  yield takeEvery(actionTypes.INIT_INGREDIENTS, initIngredientsSaga);
+  yield takeEvery(actionTypes.INIT_BURGER_INGREDIENTS, initBurgerIngredientsSaga);
+}
+
+export function* watchPizzaBuilder() {
+  yield takeEvery(actionTypes.INIT_PIZZA_INGREDIENTS, initPizzaIngredientsSaga);
 }
 
 export function* watchOrder() {

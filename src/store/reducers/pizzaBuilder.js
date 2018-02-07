@@ -3,69 +3,69 @@ import { updateObject } from '../../shared/utility';
 
 const initialState = {
     ingredients: null,
-    totalPrice: 4,
+    totalPrice: 6,
     error: false,
     building: false
 };
 
-const BURGER_INGREDIENT_PRICES = {
-    salad: 0.5,
-    cheese: 0.4,
-    meat: 1.3,
-    bacon: 0.7
+const PIZZA_INGREDIENT_PRICES = {
+    paprika: 0.5,
+    pepperoni: 1.4,
+    onion: 0.3,
+    olive: 0.7
 };
 
-const addBurgerIngredient = ( state, action ) => {
+const addPizzaIngredient = ( state, action ) => {
     const updatedIngredient = { [action.ingredientName]: state.ingredients[action.ingredientName] + 1 }
     const updatedIngredients = updateObject( state.ingredients, updatedIngredient );
     const updatedState = {
         ingredients: updatedIngredients,
-        totalPrice: state.totalPrice + BURGER_INGREDIENT_PRICES[action.ingredientName],
+        totalPrice: state.totalPrice + PIZZA_INGREDIENT_PRICES[action.ingredientName],
         building: true
     }
     return updateObject( state, updatedState );
 };
 
-const removeBurgerIngredient = (state, action) => {
+const removePizzaIngredient = (state, action) => {
     const updatedIng = { [action.ingredientName]: state.ingredients[action.ingredientName] - 1 }
     const updatedIngs = updateObject( state.ingredients, updatedIng );
     const updatedSt = {
         ingredients: updatedIngs,
-        totalPrice: state.totalPrice - BURGER_INGREDIENT_PRICES[action.ingredientName],
+        totalPrice: state.totalPrice - PIZZA_INGREDIENT_PRICES[action.ingredientName],
         building: true
     }
     return updateObject( state, updatedSt );
 };
 
-const setBurgerIngredients = (state, action) => {
+const setPizzaIngredients = (state, action) => {
     return updateObject( state, {
         ingredients: {
-            salad: action.ingredients.salad,
-            bacon: action.ingredients.bacon,
-            cheese: action.ingredients.cheese,
-            meat: action.ingredients.meat
+            paprika: action.ingredients.paprika,
+            pepperoni: action.ingredients.pepperoni,
+            onion: action.ingredients.onion,
+            olive: action.ingredients.olive
         },
-        totalPrice: 4,
+        totalPrice: 6,
         error: false,
         building: false
     } );
 };
 
-const fetchBurgerIngredientsFailed = (state, action) => {
+const fetchPizzaIngredientsFailed = (state, action) => {
     return updateObject( state, { error: true } );
 };
 
-const burgerBuildInit = (state, action) => {
+const pizzaBuildInit = (state, action) => {
     return updateObject( state, { building: false } );
 };
 
 const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
-        case actionTypes.ADD_BURGER_INGREDIENT: return addBurgerIngredient( state, action );
-        case actionTypes.REMOVE_BURGER_INGREDIENT: return removeBurgerIngredient(state, action);
-        case actionTypes.SET_BURGER_INGREDIENTS: return setBurgerIngredients(state, action);    
-        case actionTypes.FETCH_BURGER_INGREDIENTS_FAILED: return fetchBurgerIngredientsFailed(state, action);
-        case actionTypes.BURGER_BUILD_INIT: return burgerBuildInit(state,action);
+        case actionTypes.ADD_PIZZA_INGREDIENT: return addPizzaIngredient( state, action );
+        case actionTypes.REMOVE_PIZZA_INGREDIENT: return removePizzaIngredient(state, action);
+        case actionTypes.SET_PIZZA_INGREDIENTS: return setPizzaIngredients(state, action);    
+        case actionTypes.FETCH_PIZZA_INGREDIENTS_FAILED: return fetchPizzaIngredientsFailed(state, action);
+        case actionTypes.PIZZA_BUILD_INIT: return pizzaBuildInit(state,action);
         default: return state;
     }
 };

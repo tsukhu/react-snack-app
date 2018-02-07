@@ -1,30 +1,30 @@
 import * as actionTypes from './actionTypes';
 //import axios from '../../axios-orders';
 
-export const addIngredient = ( name ) => {
+export const addBurgerIngredient = ( name ) => {
     return {
-        type: actionTypes.ADD_INGREDIENT,
+        type: actionTypes.ADD_BURGER_INGREDIENT,
         ingredientName: name
     };
 };
 
-export const removeIngredient = ( name ) => {
+export const removeBurgerIngredient = ( name ) => {
     return {
-        type: actionTypes.REMOVE_INGREDIENT,
+        type: actionTypes.REMOVE_BURGER_INGREDIENT,
         ingredientName: name
     };
 };
 
-export const setIngredients = ( ingredients ) => {
+export const setBurgerIngredients = ( ingredients ) => {
     return {
-        type: actionTypes.SET_INGREDIENTS,
+        type: actionTypes.SET_BURGER_INGREDIENTS,
         ingredients: ingredients
     };
 };
 
-export const fetchIngredientsFailed = () => {
+export const fetchBurgerIngredientsFailed = () => {
     return {
-        type: actionTypes.FETCH_INGREDIENTS_FAILED
+        type: actionTypes.FETCH_BURGER_INGREDIENTS_FAILED
     };
 };
 
@@ -36,8 +36,8 @@ export const burgerBuildInit = () => {
 
 
 
-export const initIngredients = () => {
+export const initBurgerIngredients = () => {
     return {
-        type: actionTypes.INIT_INGREDIENTS
+        type: actionTypes.INIT_BURGER_INGREDIENTS
     };
 };

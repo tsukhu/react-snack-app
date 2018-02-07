@@ -116,9 +116,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: ingName => dispatch(actions.addIngredient(ingName)),
-    onIngredientRemoved: ingName => dispatch(actions.removeIngredient(ingName)),
-    onInitIngredients: () => dispatch(actions.initIngredients()) ,
+    onIngredientAdded: ingName => dispatch(actions.addBurgerIngredient(ingName)),
+    onIngredientRemoved: ingName => dispatch(actions.removeBurgerIngredient(ingName)),
+    onInitIngredients: () => dispatch(actions.initBurgerIngredients()) ,
     onInitPurchase: () => dispatch(actions.purchaseInit()),
     onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
   };
