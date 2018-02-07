@@ -8,6 +8,9 @@ const navigationItems = props => (
     <NavigationItem link="/" exact>
       Burger Builder
     </NavigationItem>
+    <NavigationItem link="/pizza" exact>
+      Pizza Builder
+    </NavigationItem>
     {props.isAuthenticated ? <NavigationItem link="/orders">Orders</NavigationItem> : null}
     {!props.isAuthenticated ? (
       <NavigationItem link="/auth">Authenticate</NavigationItem>
