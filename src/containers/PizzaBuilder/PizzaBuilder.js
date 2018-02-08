@@ -47,7 +47,7 @@ export class PizzaBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    this.props.onInitPurchase();
+    this.props.onInitPurchase('pizza');
     this.props.history.push('/checkout');
   };
 
@@ -120,7 +120,7 @@ const mapDispatchToProps = dispatch => {
     onIngredientAdded: ingName => dispatch(actions.addPizzaIngredient(ingName)),
     onIngredientRemoved: ingName => dispatch(actions.removePizzaIngredient(ingName)),
     onInitPizzaIngredients: () => dispatch(actions.initPizzaIngredients()),
-    onInitPurchase: () => dispatch(actions.purchaseInit()),
+    onInitPurchase: (snackType) => dispatch(actions.purchaseInit(snackType)),
     onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
   };
 };

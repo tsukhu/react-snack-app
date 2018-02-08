@@ -46,7 +46,7 @@ export class BurgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    this.props.onInitPurchase();
+    this.props.onInitPurchase('burger');
     this.props.history.push('/checkout');
   };
 
@@ -120,7 +120,7 @@ const mapDispatchToProps = dispatch => {
     onIngredientAdded: ingName => dispatch(actions.addBurgerIngredient(ingName)),
     onIngredientRemoved: ingName => dispatch(actions.removeBurgerIngredient(ingName)),
     onInitIngredients: () => dispatch(actions.initBurgerIngredients()) ,
-    onInitPurchase: () => dispatch(actions.purchaseInit()),
+    onInitPurchase: (snackType) => dispatch(actions.purchaseInit(snackType)),
     onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
   };
 };

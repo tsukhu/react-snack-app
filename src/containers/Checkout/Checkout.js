@@ -22,7 +22,7 @@ class Checkout extends Component {
     let summary = <Redirect to="/" />;
 
     if (this.props.ings) {
-      const puchasedRedirect = this.props.purchased ? <Redirect to="/" /> : null;
+      const puchasedRedirect = this.props.purchased || this.props.snackType === 'pizza' ? <Redirect to="/" /> : null;
 
       summary = (
         <div>
@@ -47,7 +47,8 @@ class Checkout extends Component {
 const mapStateToProps = state => {
   return {
     ings: state.burgerBuilder.ingredients,
-    purchased: state.order.purchased
+    purchased: state.order.purchased,
+    snackType: state.order.snackType
   };
 };
 
