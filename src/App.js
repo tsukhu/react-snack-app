@@ -7,7 +7,6 @@ import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 import Logout from './containers/Auth/Logout/Logout';
 import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import * as actions from './store/actions/index';
-import { PizzaBuilder } from './containers/PizzaBuilder/PizzaBuilder';
 
 
 const asyncCheckout = asyncComponent( () => {
@@ -22,6 +21,10 @@ const asyncAuth = asyncComponent( () => {
   return import('./containers/Auth/Auth')
 });
 
+const asyncPizza = asyncComponent( () => {
+  return import('./containers/PizzaBuilder/PizzaBuilder')
+});
+
 class App extends Component {
   componentDidMount () {
     this.props.onTryAutoSignup();
@@ -32,7 +35,7 @@ class App extends Component {
       <Switch>
         <Route path="/auth" component={asyncAuth} />
         <Route path="/" exact component={BurgerBuilder} />
-        <Route path="/pizza" exact component={PizzaBuilder} />
+        <Route path="/pizza" exact component={asyncPizza} />
         <Redirect to="/" />
       </Switch>
     );
@@ -44,7 +47,7 @@ class App extends Component {
           <Route path="/orders" component={asyncOrders} />
           <Route path="/logout" component={Logout} />
           <Route path="/auth" component={asyncAuth} />
-          <Route path="/pizza" exact component={PizzaBuilder} />
+          <Route path="/pizza" exact component={asyncPizza} />
           <Route path="/" exact component={BurgerBuilder} />
           <Redirect to="/" />
         </Switch>
