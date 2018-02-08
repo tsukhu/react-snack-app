@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
 
 import Aux from '../../hoc/AuxComponent/AuxComponent';
+import axios from '../../axios-orders';
+import Spinner from '../../components/UI/Spinner/Snipper';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 export class PizzaBuilder extends Component {
   state = {
@@ -15,16 +18,33 @@ export class PizzaBuilder extends Component {
   }
 
   render() {
-    return (
-      <Aux>
-      <div>
-        <h1>This is a PizzaBuilder !! </h1>
-        <Pizza />
-      </div>
-      </Aux>
+    let pizza = this.props.error ? (
+      <p>Ingredients can't be loaded</p>
+    ) : (
+      <Spinner />
     );
+
+    if (this.props.ings) {
+      pizza = (
+        <Aux>
+          <Pizza ingredients={this.props.ings} />
+        </Aux>
+      );
+    }
+    
+    return (<Aux>{pizza}</Aux>);
+  
   }
 }
+const mapStateToProps = state => {
+  return {
+    ings: state.pizzaBuilder.ingredients,
+    price: state.pizzaBuilder.totalPrice,
+    error: state.pizzaBuilder.error,
+    isAuthenticated: state.auth.token !== null,
+    building: state.pizzaBuilder.building
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -32,4 +52,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(PizzaBuilder);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  withErrorHandler(PizzaBuilder, axios)
+);

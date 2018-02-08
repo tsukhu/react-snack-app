@@ -2,17 +2,25 @@ import React from 'react';
 import classes from './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
 
-const controls = [
+const controls = {
+    burger:  [
     { label: 'Salad', type: 'salad'},
     { label: 'Bacon', type: 'bacon'},
     { label: 'Cheese', type: 'cheese'},
     { label: 'Meat', type: 'meat'},
-];
+    ],
+    pizza: [
+        { label: 'Olive', type: 'olive'},
+        { label: 'Onion', type: 'onion'},
+        { label: 'Paprika', type: 'paprika'},
+        { label: 'Pepperoni', type: 'pepperoni'},
+    ]
+};
 
 const buildControls = (props) => (
     <div className={classes.BuildControls}>
         <p>Current Price: <strong>{props.price.toFixed(2)}</strong> </p>
-        {controls.map(ctrl => (
+        {controls[props.snackType].map(ctrl => (
             <BuildControl 
             key={ctrl.label} 
             label={ctrl.label}
