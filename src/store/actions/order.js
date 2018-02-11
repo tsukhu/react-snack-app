@@ -21,9 +21,9 @@ export const purchaseBurgerStart = () => {
     };
 };
 
-export const burgerBuildInit = () => {
+export const snackBuildInit = () => {
     return {
-        type: actionTypes.BURGER_BUILD_INIT
+        type: actionTypes.SNACK_BUILD_INIT
     };
 };
 

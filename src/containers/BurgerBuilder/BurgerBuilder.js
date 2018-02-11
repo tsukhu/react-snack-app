@@ -17,7 +17,7 @@ export class BurgerBuilder extends Component {
   };
 
   componentDidMount() {
-      this.props.onInitIngredients();
+      this.props.onInitIngredients('burger');
   }
 
   updatePurchaseState(ingredients) {
@@ -107,19 +107,19 @@ export class BurgerBuilder extends Component {
 
 const mapStateToProps = state => {
   return {
-    ings: state.burgerBuilder.ingredients,
-    price: state.burgerBuilder.totalPrice,
-    error: state.burgerBuilder.error,
+    ings: state.snackBuilder.ingredients,
+    price: state.snackBuilder.totalPrice,
+    error: state.snackBuilder.error,
     isAuthenticated: state.auth.token !== null,
-    building: state.burgerBuilder.building 
+    building: state.snackBuilder.building 
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: ingName => dispatch(actions.addBurgerIngredient(ingName)),
-    onIngredientRemoved: ingName => dispatch(actions.removeBurgerIngredient(ingName)),
-    onInitIngredients: () => dispatch(actions.initBurgerIngredients()) ,
+    onIngredientAdded: (snackType,ingName) => dispatch(actions.addSnackIngredient(snackType,ingName)),
+    onIngredientRemoved: (snackType,ingName) => dispatch(actions.removeSnackIngredient(snackType,ingName)),
+    onInitIngredients: (snackType) => dispatch(actions.initSnackIngredients(snackType)) ,
     onInitPurchase: (snackType) => dispatch(actions.purchaseInit(snackType)),
     onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
   };
