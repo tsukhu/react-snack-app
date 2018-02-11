@@ -3,6 +3,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This contains a demo app built based on the wonderful react training lessons provided by 
 [Maximilian Schwarzmüller on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/overview) 
 
+## Updates made
+* The application now supports two types of snacks - Burger / Pizza
+* There is a common reducer and redux saga for the Snack ingredients init , Adding/Removing ingredients, Orderings
+* Orders now takes care of handling multiple snack types - Burgers and Pizzas
+* Modular components for building Pizza (using base, and toppings as separate components) - on similar lines to the Burger Builder
+* While the Burger can have a multiple ingredients added of a specific type, the pizza ingredients can only be added once. Handling for that added.
+* Optimized / Reused the same actions/reducers/sagas - via a snackType propery 
+* Order Summary now shows snack type as well.
+
+## Demo
+* The demo is available [here](https://elated-bhabha-a2e338.netlify.com/)
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
