@@ -9,7 +9,8 @@ This contains a demo app built based on the wonderful react training lessons pro
 * Orders now takes care of handling multiple snack types - Burgers and Pizzas
 * Modular components for building Pizza (using base, and toppings as separate components) - on similar lines to the Burger Builder
 * While the Burger can have a multiple ingredients added of a specific type, the pizza ingredients can only be added once. Handling for that added.
-* Optimized / Reused the same actions/reducers/sagas - via a snackType propery 
+* Optimized / Reused the same actions/reducers/sagas - via a snackType propery
+* Authentication handling for in process pizza or burger order 
 * Order Summary now shows snack type as well.
 
 ## Demo
