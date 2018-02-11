@@ -44,8 +44,12 @@ class Auth extends Component {
   };
 
   componentDidMount() {
-    if (!this.props.buildingBurger && this.props.authRedirectPath !== '/') {
-      this.props.onSetAuthRedirectPath();
+    if (!this.props.buildingSnack && this.props.authRedirectPath !== '/') {
+      if (this.props.snackType === 'burger') {
+        this.props.onSetAuthRedirectPath('/');
+      } else {
+      this.props.onSetAuthRedirectPath('/pizza');
+      }
     }
   }
 
@@ -138,7 +142,8 @@ const mapStateToProps = state => {
     loading: state.auth.loading,
     error: state.auth.error,
     isAuthenticated: state.auth.token !== null,
-    buildingBurger: state.snackBuilder.building,
+    buildingSnack: state.snackBuilder.building,
+    snackType: state.snackBuilder.snackType,
     authRedirectPath: state.auth.authRedirectPath
   };
 };
@@ -147,7 +152,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onAuth: (email, password, isSignup) =>
       dispatch(actions.auth(email, password, isSignup)),
-    onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath('/'))
+    onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
   };
 };
 

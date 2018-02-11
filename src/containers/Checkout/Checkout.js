@@ -49,7 +49,7 @@ const mapStateToProps = state => {
   return {
     ings: state.snackBuilder.ingredients,
     purchased: state.order.purchased,
-    snackType: state.order.snackType
+    snackType: state.snackBuilder.snackType
   };
 };
 
