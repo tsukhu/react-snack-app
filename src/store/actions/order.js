@@ -1,23 +1,23 @@
 import * as actionTypes from './actionTypes';
 
-export const purchaseBurgerSuccess = ( id, orderData ) => {
+export const purchaseSnackSuccess = ( id, orderData ) => {
     return {
-        type: actionTypes.PURCHASE_BURGER_SUCCESS,
+        type: actionTypes.PURCHASE_SNACK_SUCCESS,
         orderId: id,
         orderData: orderData
     };
 };
 
-export const purchaseBurgerFail = ( error ) => {
+export const purchaseSnackFail = ( error ) => {
     return {
-        type: actionTypes.PURCHASE_BURGER_FAIL,
+        type: actionTypes.PURCHASE_SNACK_FAIL,
         error: error
     };
 }
 
-export const purchaseBurgerStart = () => {
+export const purchaseSnackStart = () => {
     return {
-        type: actionTypes.PURCHASE_BURGER_START
+        type: actionTypes.PURCHASE_SNACK_START
     };
 };
 
@@ -27,9 +27,9 @@ export const snackBuildInit = () => {
     };
 };
 
-export const purchaseBurger = ( orderData, token ) => {
+export const purchaseSnack = ( orderData, token ) => {
     return {
-        type: actionTypes.PURCHASE_BURGER,
+        type: actionTypes.PURCHASE_SNACK,
         orderData: orderData,
         token: token
     };

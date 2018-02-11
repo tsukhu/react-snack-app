@@ -9,7 +9,7 @@ import {
 
 import { initSnackIngredientsSaga } from './snackBuilder';
 
-import { purchaseBurgerSaga, fetchOrdersSaga } from './order';
+import { purchaseSnackSaga, fetchOrdersSaga } from './order';
 
 export function* watchAuth() {
   yield all([
@@ -26,6 +26,6 @@ export function* watchSnackBuilder() {
 
 
 export function* watchOrder() {
-  yield takeLatest(actionTypes.PURCHASE_BURGER, purchaseBurgerSaga);
+  yield takeLatest(actionTypes.PURCHASE_SNACK, purchaseSnackSaga);
   yield takeLatest(actionTypes.FETCH_ORDERS, fetchOrdersSaga);
 }

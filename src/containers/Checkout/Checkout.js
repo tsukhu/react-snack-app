@@ -22,12 +22,13 @@ class Checkout extends Component {
     let summary = <Redirect to="/" />;
 
     if (this.props.ings) {
-      const puchasedRedirect = this.props.purchased || this.props.snackType === 'pizza' ? <Redirect to="/" /> : null;
+      const puchasedRedirect = this.props.purchased ? <Redirect to="/" /> : null;
 
       summary = (
         <div>
           {puchasedRedirect}
           <CheckoutSummary
+            snackType={this.props.snackType}
             ingredients={this.props.ings}
             checkoutCancelled={this.checkoutCancelledHandler}
             checkoutContinued={this.checkoutContinuedHandler}

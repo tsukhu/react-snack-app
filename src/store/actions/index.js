@@ -8,15 +8,15 @@ export {
 } from './snackBuilder';
 
 export {
-  purchaseBurger,
+  purchaseSnack,
   purchaseInit,
   fetchOrders,
   fetchOrdersFail,
   fetchOrdersSuccess,
   fetchOrdersStart,
-  purchaseBurgerStart,
-  purchaseBurgerFail,
-  purchaseBurgerSuccess
+  purchaseSnackStart,
+  purchaseSnackFail,
+  purchaseSnackSuccess
 } from './order';
 
 export {
