@@ -1,5 +1,4 @@
 .Container {
-  
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
@@ -11,6 +10,11 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: auto;
+  overflow: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 .Container .Pizza {
   -webkit-transform: scale(0.8);
@@ -54,10 +58,20 @@
 }
 
 .Toppings:before {
-    top: 170px;
-    left: 150px;
-  }
-  .Toppings:after {
-    top: 30px;
-    left: 150px;
-  }
+  top: 170px;
+  left: 150px;
+}
+.Toppings:after {
+  top: 30px;
+  left: 150px;
+}
+
+.AddIngredients {
+  top: 100px;
+  margin: auto;
+  overflow: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: relative;
+}
