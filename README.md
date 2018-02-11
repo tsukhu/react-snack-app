@@ -4,7 +4,7 @@ This contains a demo app built based on the wonderful react training lessons pro
 [Maximilian Schwarzmüller on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/overview) 
 
 ## Updates made
-* The application now supports two types of snacks - Burger / Pizza
+* The application now supports two types of snacks - Burger / Pizza (Newly added). Refactoring of the code to accomodate a new product / snack type.
 * There is a common reducer and redux saga for the Snack ingredients init , Adding/Removing ingredients, Orderings
 * Orders now takes care of handling multiple snack types - Burgers and Pizzas
 * Modular components for building Pizza (using base, and toppings as separate components) - on similar lines to the Burger Builder
