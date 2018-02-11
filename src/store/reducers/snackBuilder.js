@@ -24,6 +24,8 @@ const PIZZA_INGREDIENT_PRICES = {
 };
 
 const addSnackIngredient = (state, action) => {
+  if (action.snackType === 'pizza' && state.ingredients[action.ingredientName] === 1)
+    return state;
   const updatedIngredient = {
     [action.ingredientName]: state.ingredients[action.ingredientName] + 1
   };

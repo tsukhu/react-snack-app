@@ -88,6 +88,7 @@ export class PizzaBuilder extends Component {
           purchaseCanceled={this.purchaseCancelHandler}
           purchaseContinue={this.purchaseContinueHandler}
           price={this.props.price}
+          snackType={this.props.snackType}
         />
       );
     }
@@ -110,6 +111,7 @@ const mapStateToProps = state => {
     ings: state.snackBuilder.ingredients,
     price: state.snackBuilder.totalPrice,
     error: state.snackBuilder.error,
+    snackType: state.snackBuilder.snackType,
     isAuthenticated: state.auth.token !== null,
     building: state.snackBuilder.building
   };

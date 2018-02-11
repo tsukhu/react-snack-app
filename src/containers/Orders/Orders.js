@@ -20,6 +20,7 @@ class Orders extends Component {
           key={order.id}
           ingredients={order.ingredients}
           price={order.price}
+          snackType={(order.snackType)?order.snackType:'n/a'}
         />
       ));
     }
