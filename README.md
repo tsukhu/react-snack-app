@@ -3,6 +3,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This contains a demo app built and extended based on the wonderful react training lessons provided by 
 [Maximilian Schwarzmüller on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/overview) 
 
+## Technologies / Frameworks used
+* React 16
+* Redux
+* Redux Saga
+* Firebase (Db / Authentication)
+* CSS Modules
+
 ## Updates made
 * The application now supports two types of snacks - Burger / Pizza (Newly added). Refactoring of the code to accomodate a new product / snack type.
 * There is a common reducer and redux saga for the Snack ingredients init , Adding/Removing ingredients, Orderings
