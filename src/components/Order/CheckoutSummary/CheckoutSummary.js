@@ -15,12 +15,12 @@ const checkoutSummary = (props) => {
             <div style={{width: '100%', margin: 'auto'}}>
             {snack}
                 </div>
-                <Button 
+                <span><Button 
                 btnType="Danger"
                 clicked={props.checkoutCancelled}>CANCEL</Button>
                 <Button 
                 btnType="Success"
-                clicked={props.checkoutContinued}>CONTINUE</Button>
+                clicked={props.checkoutContinued}>CONTINUE</Button></span>
             </div>
     );
 }
