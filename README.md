@@ -9,6 +9,7 @@ This contains a demo app built and extended based on the wonderful react trainin
 * Redux Saga
 * Firebase (Db / Authentication)
 * CSS Modules
+* Build using create-react-app cli
 
 ## Updates made
 * The application now supports two types of snacks - Burger / Pizza (Newly added). Refactoring of the code to accomodate a new product / snack type.
