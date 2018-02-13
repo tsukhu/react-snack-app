@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-This contains a demo app built based on the wonderful react training lessons provided by 
+This contains a demo app built and extended based on the wonderful react training lessons provided by 
 [Maximilian Schwarzmüller on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/overview) 
 
 ## Updates made
