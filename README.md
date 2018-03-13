@@ -1,7 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-This contains a demo app built and extended based on the wonderful react training lessons provided by 
-[Maximilian Schwarzmüller on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/overview) 
+This contains a demo app built , enhanced and extended based on the wonderful react training lessons provided by 
+[Maximilian Schwarzmüller on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/overview)
+
 
 ## Technologies / Frameworks used
 * React 16
@@ -24,6 +25,7 @@ This contains a demo app built and extended based on the wonderful react trainin
 
 ## Demo
 * The demo is available [here](https://elated-bhabha-a2e338.netlify.com/)
+* StoryBook based Visual Tests, Documentation , preview demo is available [on the gh_pages](https://ers-hcl.github.io/react-snack-app/)
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
