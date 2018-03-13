@@ -10,6 +10,7 @@ This contains a demo app built and extended based on the wonderful react trainin
 * Firebase (Db / Authentication)
 * CSS Modules
 * Build using create-react-app cli
+* Added Storybook support - Living Component Preview , Documentation , Visual Tests
 
 ## Updates made
 * The application now supports two types of snacks - Burger / Pizza (Newly added). Refactoring of the code to accomodate a new product / snack type.
