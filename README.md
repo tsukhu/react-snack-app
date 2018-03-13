@@ -25,8 +25,31 @@ This contains a demo app built , enhanced and extended based on the wonderful re
 * Awesome StoryBook support
 
 ## Demo
+
 * The demo is available [here](https://elated-bhabha-a2e338.netlify.com/)
 * StoryBook based Visual Tests, Documentation , preview demo is available [on the gh_pages](https://ers-hcl.github.io/react-snack-app/)
+
+## StoryBook Scripts
+
+* Live Reload and Development mode for storybook
+
+```bash
+npm run storybook
+```
+
+* Build static version of storybook
+
+```bash
+npm run build-storybook
+```
+
+* Deploy story book to gh-pages (First build static version of storybook)
+
+```bash
+npm run deploy-storybook
+```
+
+-----------
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
