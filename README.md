@@ -22,6 +22,7 @@ This contains a demo app built , enhanced and extended based on the wonderful re
 * Optimized / Reused the same actions/reducers/sagas - via a snackType propery
 * Authentication handling for in process pizza or burger order 
 * Order Summary now shows snack type as well.
+* Awesome StoryBook support
 
 ## Demo
 * The demo is available [here](https://elated-bhabha-a2e338.netlify.com/)
